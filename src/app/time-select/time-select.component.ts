@@ -21,7 +21,6 @@ import {
   FormControl,
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR,
-  ValidationErrors,
   Validator
 } from '@angular/forms';
 import {CalendarValue} from '../common/types/calendar-value';
@@ -135,7 +134,7 @@ export class TimeSelectComponent implements OnInit, OnChanges, ControlValueAcces
   registerOnTouched(fn: any): void {
   }
 
-  validate(formControl: FormControl): ValidationErrors | any {
+  validate(formControl: FormControl): any {
     if (this.minDate || this.maxDate || this.minTime || this.maxTime) {
       return this.validateFn(formControl.value);
     } else {

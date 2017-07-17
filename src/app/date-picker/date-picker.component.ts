@@ -37,7 +37,6 @@ import {
   FormControl,
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR,
-  ValidationErrors,
   Validator
 } from '@angular/forms';
 import * as moment from 'moment';
@@ -206,7 +205,7 @@ export class DatePickerComponent implements OnChanges,
   registerOnTouched(fn: any): void {
   }
 
-  validate(formControl: FormControl): ValidationErrors | any {
+  validate(formControl: FormControl): any {
     if (this.minDate || this.maxDate || this.minTime || this.maxTime) {
       return this.validateFn(formControl.value);
     } else {

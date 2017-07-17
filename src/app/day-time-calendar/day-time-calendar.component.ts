@@ -17,7 +17,6 @@ import {
   FormControl,
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR,
-  ValidationErrors,
   Validator
 } from '@angular/forms';
 import * as moment from 'moment';
@@ -124,7 +123,7 @@ export class DayTimeCalendarComponent implements OnInit, OnChanges, ControlValue
   registerOnTouched(fn: any): void {
   }
 
-  validate(formControl: FormControl): ValidationErrors | any {
+  validate(formControl: FormControl): any {
     if (this.minDate || this.maxDate) {
       return this.validateFn(formControl.value);
     } else {
